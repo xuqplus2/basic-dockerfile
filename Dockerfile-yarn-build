@@ -5,6 +5,6 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
     && yarn add global umi \
     && rm -rf /var/cache/apk/*
 
-CMD cd /build/ && yarn
+CMD cd /build/${BUILD_DIR:$JENKINS_HOME_LENGTH} && yarn
 
 # docker run --rm -v $(pwd):/build/ THIS_IMAGE_NAME
